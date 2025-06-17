@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego Dino - Cumpleaños</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="pantallaInicio" class="pantallaInicio pantalla activa">
+      <h1>El Viaje del Carnotauro</h1>
+      <p>¡Bienvenido! Tu mejor puntaje es: <span id="mejorPuntaje">0</span></p>
+      <button class="boton" onclick="iniciarJuego()">Jugar</button>
+    </div>
+
+    <div id="pantallaJuego" class="pantalla">
+      <div class="hud">Vidas: <span id="vidas">3</span></div>
+      <div class="barra-progreso">
+        <div class="progreso" id="barraProgreso"></div>
+      </div>
+      <img src="./images/dino.png" class="dino" id="dino" />
+      <img src="./images/obstaculo.png" class="obstaculo" id="obstaculo" />
+
+      <div id="preguntaBox">
+        <div id="pregunta">Pregunta aquí</div>
+        <div class="opciones"></div>
+        <p id="mensajeRespuesta"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
