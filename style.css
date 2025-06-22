@@ -123,7 +123,8 @@ html {
   border-radius: 8px;
   cursor: pointer;
 }
-.hud {
+.hud,
+.puntaje {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -132,6 +133,9 @@ html {
   padding: 10px;
   border-radius: 10px;
   font-weight: bold;
+}
+.puntaje {
+  left: 100px;
 }
 .barra-progreso {
   position: absolute;
@@ -147,4 +151,14 @@ html {
   height: 100%;
   background: #2a9d8f;
   width: 0%;
+}
+.mensajeFinal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 51%;
+  font-size: x-large;
+  font-weight: bold;
+  color: #c33317;
 }

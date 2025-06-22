@@ -1,27 +1,25 @@
+const niveles = ["facil", "medio", "dificil"];
+let nivelActual = 0; // 0 = facil, 1 = medio, 2 = dificil
 let preguntas = [];
-
-fetch("preguntas.json")
-  .then((res) => res.json())
-  .then((data) => {
-    preguntas = data;
-    // iniciarJuego(); // iniKcia el juego una vez cargadas las preguntas
-  })
-  .catch((err) => console.error("Error al cargar preguntas:", err));
-
-let nivel = 0;
+let preguntasPorNivel = {};
+let preguntasUsadas = JSON.parse(localStorage.getItem("preguntasUsadas")) || [];
 let vidas = 3;
 let progreso = 0;
 let velocidad = 2000;
 let distanciaPista = 5000;
+let puntaje = 1;
 let mejorPuntaje = localStorage.getItem("mejorPuntaje") || 0;
 let colisionInterval;
 let colisionDetectada = false;
 let esperandoPregunta = false;
+let preguntaActiva = false;
 
+// Elementos del DOM
 const dino = document.getElementById("dino");
 const obstaculo = document.getElementById("obstaculo");
 const pantallaJuego = document.getElementById("pantallaJuego");
 const preguntaBox = document.getElementById("preguntaBox");
+const preguntaTxt = document.getElementById("pregunta");
 const contenedorOpciones = document.querySelector(".opciones");
 const mensaje = document.getElementById("mensajeRespuesta");
 
@@ -29,10 +27,47 @@ document.getElementById("mejorPuntaje").textContent = mejorPuntaje;
 
 pantallaJuego.addEventListener("click", saltar);
 
+fetch("preguntas.json")
+  .then((res) => res.json())
+  .then((data) => {
+    preguntasPorNivel = agruparPreguntas(data);
+  })
+  .catch((err) => console.error("Error al cargar preguntas:", err));
+
+function agruparPreguntas(preguntas) {
+  return {
+    facil: preguntas.filter((p) => p.nivel === "facil"),
+    medio: preguntas.filter((p) => p.nivel === "medio"),
+    dificil: preguntas.filter((p) => p.nivel === "dificil"),
+  };
+}
+
+function obtenerPregunta(preguntasPorNivel) {
+  const nivel = niveles[nivelActual];
+  const disponibles = preguntasPorNivel[nivel].filter(
+    (p) => !preguntasUsadas.includes(p.id)
+  );
+
+  // Si ya usamos todas las preguntas de este nivel, reiniciamos el ciclo completo
+  if (disponibles.length === 0) {
+    preguntasUsadas = [];
+    localStorage.removeItem("preguntasUsadas");
+    return obtenerPregunta(preguntasPorNivel); // vuelve a intentar
+  }
+
+  // Seleccionar una pregunta aleatoria
+  const pregunta = disponibles[Math.floor(Math.random() * disponibles.length)];
+  preguntasUsadas.push(pregunta.id);
+  localStorage.setItem("preguntasUsadas", JSON.stringify(preguntasUsadas));
+
+  return pregunta;
+}
+
 function iniciarJuego() {
   document.getElementById("pantallaInicio").classList.remove("activa");
   document.getElementById("pantallaJuego").classList.add("activa");
   document.getElementById("vidas").textContent = vidas;
+  document.getElementById("puntaje").textContent = puntaje;
   iniciarNivel();
 }
 
@@ -49,9 +84,6 @@ function iniciarNivel() {
     if (progreso >= 100) {
       clearInterval(progresoInterval);
       esperandoPregunta = true;
-      // detenerObstaculo();
-      // clearInterval(colisionInterval);
-      // mostrarPregunta();
     }
   }, distanciaPista / 100);
 }
@@ -72,50 +104,56 @@ function detenerObstaculo() {
 }
 
 function mostrarPregunta() {
+  preguntaActiva = true;
   preguntaBox.style.display = "flex";
-  const pregunta = preguntas[nivel];
-  document.getElementById("pregunta").textContent = pregunta.pregunta;
+  const pregunta = obtenerPregunta(preguntasPorNivel);
+  preguntaTxt.textContent = pregunta.pregunta;
   contenedorOpciones.innerHTML = "";
   pregunta.opciones.forEach((op) => {
     const btn = document.createElement("button");
     btn.textContent = op;
-    btn.onclick = () => responder(op);
+    btn.onclick = () => responder(op, pregunta.respuesta);
     contenedorOpciones.appendChild(btn);
   });
 }
 
-function responder(opcion) {
+function responder(opcion, respuestaCorrecta) {
   contenedorOpciones.innerHTML = "";
-  if (opcion === preguntas[nivel].respuesta) {
+  if (opcion === respuestaCorrecta) {
+    puntaje++;
+    document.getElementById("puntaje").textContent = puntaje;
+
     mensaje.textContent = "¡Respuesta correcta!";
     mensaje.style.color = "green";
-    nivel++;
+    // Avanzar al siguiente nivel
+    nivelActual = (nivelActual + 1) % niveles.length;
     velocidad *= 0.9;
-    setTimeout(() => {
-      ocultarPregunta();
-      mensaje.textContent = ""; // limpiar mensaje
-      if (nivel < preguntas.length) {
-        iniciarNivel();
-      } else {
-        ganarJuego();
-      }
-    }, 1500); // esperar 1.5 segundos antes de cerrar
+
+    finalizarRespuesta(() => iniciarNivel());
   } else {
     mensaje.textContent = "Respuesta incorrecta";
     mensaje.style.color = "red";
-    setTimeout(() => {
-      mensaje.textContent = ""; // limpiar mensaje
-      ocultarPregunta();
-      perderVida();
-    }, 1500); // esperar 1.5 segundos antes de cerrar
+
+    finalizarRespuesta(() => perderVida());
   }
 }
 
+function finalizarRespuesta(callback) {
+  setTimeout(() => {
+    mensaje.textContent = "";
+    ocultarPregunta();
+    preguntaActiva = false;
+    callback();
+  }, 1500);
+}
+
 function ocultarPregunta() {
-  document.getElementById("preguntaBox").style.display = "none";
+  preguntaBox.style.display = "none";
 }
 
 function saltar() {
+  if (preguntaActiva) return; // Evita saltar si hay una pregunta activa
+
   if (!dino.classList.contains("jump")) {
     dino.classList.add("jump");
     setTimeout(() => {
@@ -170,9 +208,20 @@ function ganarJuego() {
   terminarJuego("¡Felicidades, terminaste el juego!");
 }
 
-function terminarJuego(mensaje) {
+function terminarJuego(msj) {
+  detenerObstaculo();
+  colisionDetectada = false;
+  preguntaActiva = false;
+  esperandoPregunta = false;
   clearInterval(colisionInterval);
-  alert(mensaje);
-  localStorage.setItem("mejorPuntaje", Math.max(mejorPuntaje, nivel));
-  location.reload();
+  preguntaBox.style.display = "flex";
+  preguntaBox.removeChild(contenedorOpciones);
+  preguntaBox.removeChild(preguntaTxt);
+  mensaje.textContent = msj || "¡Juego terminado!";
+  mensaje.classList.add("mensajeFinal");
+  setTimeout(() => {
+    preguntaBox.style.display = "none";
+    location.reload();
+  }, 2500);
+  localStorage.setItem("mejorPuntaje", Math.max(mejorPuntaje, puntaje));
 }
