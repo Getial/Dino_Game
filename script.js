@@ -1,4 +1,6 @@
 const niveles = ["facil", "medio", "dificil"];
+const sonidoSalto = new Audio("./assets/sounds/jump.mp3");
+const sonidoSelva = new Audio("./assets/sounds/selva3.mp3");
 let nivelActual = 0; // 0 = facil, 1 = medio, 2 = dificil
 let preguntas = [];
 let preguntasPorNivel = {};
@@ -13,6 +15,7 @@ let colisionInterval;
 let colisionDetectada = false;
 let esperandoPregunta = false;
 let preguntaActiva = false;
+let sonidoActivado = true;
 
 // Elementos del DOM
 const dino = document.getElementById("dino");
@@ -22,10 +25,24 @@ const preguntaBox = document.getElementById("preguntaBox");
 const preguntaTxt = document.getElementById("pregunta");
 const contenedorOpciones = document.querySelector(".opciones");
 const mensaje = document.getElementById("mensajeRespuesta");
+const toggleBtn = document.getElementById("toggleSonido");
 
 document.getElementById("mejorPuntaje").textContent = mejorPuntaje;
 
+toggleBtn.addEventListener("click", () => {
+  sonidoActivado = !sonidoActivado;
+  if (sonidoActivado) {
+    sonidoSelva.play();
+    toggleBtn.classList.remove("off");
+  } else {
+    sonidoSelva.pause();
+    toggleBtn.classList.add("off");
+  }
+});
+
 pantallaJuego.addEventListener("click", saltar);
+sonidoSelva.loop = true;
+sonidoSalto.volume = 0.5; // Ajusta el volumen del sonido de salto
 
 fetch("preguntas.json")
   .then((res) => res.json())
@@ -64,6 +81,7 @@ function obtenerPregunta(preguntasPorNivel) {
 }
 
 function iniciarJuego() {
+  sonidoSelva.play();
   document.getElementById("pantallaInicio").classList.remove("activa");
   document.getElementById("pantallaJuego").classList.add("activa");
   document.getElementById("vidas").textContent = vidas;
@@ -72,6 +90,7 @@ function iniciarJuego() {
 }
 
 function iniciarNivel() {
+  sonidoSelva.volume = 0.5; // Ajusta el volumen de la música
   progreso = 0;
   esperandoPregunta = false;
   actualizarProgreso();
@@ -104,6 +123,7 @@ function detenerObstaculo() {
 }
 
 function mostrarPregunta() {
+  sonidoSelva.volume = 0.2; // Reduce el volumen de la música al mostrar la pregunta
   preguntaActiva = true;
   preguntaBox.style.display = "flex";
   const pregunta = obtenerPregunta(preguntasPorNivel);
@@ -155,6 +175,11 @@ function saltar() {
   if (preguntaActiva) return; // Evita saltar si hay una pregunta activa
 
   if (!dino.classList.contains("jump")) {
+    if (sonidoActivado) {
+      sonidoSalto.volume = 0.5; // Ajusta el volumen del sonido de salto
+      sonidoSalto.currentTime = 0; // Reinicia el sonido
+      sonidoSalto.play();
+    }
     dino.classList.add("jump");
     setTimeout(() => {
       dino.classList.remove("jump");

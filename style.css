@@ -21,7 +21,7 @@ html {
   display: flex;
 }
 .pantallaInicio {
-  background: url("./images/background_main.png") no-repeat center center;
+  background: url("./assets/images/background_main.png") no-repeat center center;
   background-size: cover;
   /* display: flex; */
   flex-direction: column;
@@ -52,7 +52,7 @@ html {
   background-color: #21867a;
 }
 #pantallaJuego {
-  background: url("./images/fondo_juego.png") repeat-x bottom;
+  background: url("./assets/images/fondo_juego.png") repeat-x bottom;
   background-size: cover;
   overflow: hidden;
 }
@@ -139,9 +139,9 @@ html {
 }
 .barra-progreso {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 150px;
+  top: 60px;
+  left: 10px;
+  width: 45vw;
   height: 20px;
   background: #ddd;
   border-radius: 10px;
@@ -161,4 +161,23 @@ html {
   font-size: x-large;
   font-weight: bold;
   color: #c33317;
+}
+#toggleSonido {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: url("./assets/icons/sound-on.png") no-repeat center center;
+  background-size: contain;
+  cursor: pointer;
+  border: none;
+}
+#toggleSonido.off {
+  background: url("./assets/icons/sound-off.png") no-repeat center center;
+  background-size: contain;
+}
+#toggleSonido:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
 }
