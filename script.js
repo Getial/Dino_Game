@@ -1,7 +1,7 @@
-const niveles = ["facil", "medio", "dificil"];
+const dificultades = ["facil", "medio", "dificil"];
 const sonidoSalto = new Audio("./assets/sounds/jump.mp3");
 const sonidoSelva = new Audio("./assets/sounds/selva3.mp3");
-let nivelActual = 0; // 0 = facil, 1 = medio, 2 = dificil
+let dificultad = 0; // 0 = facil, 1 = medio, 2 = dificil
 let preguntas = [];
 let preguntasPorNivel = {};
 let preguntasUsadas = JSON.parse(localStorage.getItem("preguntasUsadas")) || [];
@@ -21,11 +21,63 @@ let sonidoActivado = true;
 const dino = document.getElementById("dino");
 const obstaculo = document.getElementById("obstaculo");
 const pantallaJuego = document.getElementById("pantallaJuego");
+const pantallaInicio = document.getElementById("pantallaInicio");
 const preguntaBox = document.getElementById("preguntaBox");
 const preguntaTxt = document.getElementById("pregunta");
 const contenedorOpciones = document.querySelector(".opciones");
 const mensaje = document.getElementById("mensajeRespuesta");
 const toggleBtn = document.getElementById("toggleSonido");
+
+//precargar assets
+function precargarAssets(callback) {
+  const assets = {
+    sonidos: ["assets/sounds/jump.mp3", "assets/sounds/selva3.mp3"],
+    imagenes: [
+      "assets/images/dino.png",
+      "assets/images/background_main.png",
+      "assets/images/obstaculo.png",
+    ],
+  };
+
+  const total = assets.sonidos.length + assets.imagenes.length;
+  let cargados = 0;
+
+  const barra = document.getElementById("barraCarga");
+  const porcentajeTxt = document.getElementById("porcentaje");
+
+  function actualizarCarga() {
+    cargados++;
+    const progreso = Math.floor((cargados / total) * 100);
+    barra.style.width = progreso + "%";
+    porcentajeTxt.textContent = progreso + "%";
+
+    if (cargados === total) {
+      setTimeout(() => {
+        document.getElementById("pantallaCarga").style.display = "none";
+        // callback(); // Todo cargado, inicia el juego
+      }, 500);
+    }
+  }
+
+  // Cargar sonidos
+  assets.sonidos.forEach((src) => {
+    const audio = new Audio();
+    audio.src = src;
+    audio.addEventListener("canplaythrough", actualizarCarga, { once: true });
+  });
+
+  // Cargar imágenes
+  assets.imagenes.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+    img.onload = actualizarCarga;
+  });
+}
+
+precargarAssets(() => {
+  document.getElementById("pantallaCarga").style.display = "none";
+  document.getElementById("pantallaInicio").classList.add("activa");
+});
 
 document.getElementById("mejorPuntaje").textContent = mejorPuntaje;
 
@@ -41,6 +93,7 @@ toggleBtn.addEventListener("click", () => {
 });
 
 pantallaJuego.addEventListener("click", saltar);
+
 sonidoSelva.loop = true;
 sonidoSalto.volume = 0.5; // Ajusta el volumen del sonido de salto
 
@@ -60,7 +113,7 @@ function agruparPreguntas(preguntas) {
 }
 
 function obtenerPregunta(preguntasPorNivel) {
-  const nivel = niveles[nivelActual];
+  const nivel = dificultades[dificultad];
   const disponibles = preguntasPorNivel[nivel].filter(
     (p) => !preguntasUsadas.includes(p.id)
   );
@@ -82,8 +135,8 @@ function obtenerPregunta(preguntasPorNivel) {
 
 function iniciarJuego() {
   sonidoSelva.play();
-  document.getElementById("pantallaInicio").classList.remove("activa");
-  document.getElementById("pantallaJuego").classList.add("activa");
+  pantallaInicio.classList.remove("activa");
+  pantallaJuego.classList.add("activa");
   document.getElementById("vidas").textContent = vidas;
   document.getElementById("puntaje").textContent = puntaje;
   iniciarNivel();
@@ -146,7 +199,7 @@ function responder(opcion, respuestaCorrecta) {
     mensaje.textContent = "¡Respuesta correcta!";
     mensaje.style.color = "green";
     // Avanzar al siguiente nivel
-    nivelActual = (nivelActual + 1) % niveles.length;
+    dificultad = (dificultad + 1) % dificultades.length;
     velocidad *= 0.9;
 
     finalizarRespuesta(() => iniciarNivel());
@@ -242,11 +295,25 @@ function terminarJuego(msj) {
   preguntaBox.style.display = "flex";
   preguntaBox.removeChild(contenedorOpciones);
   preguntaBox.removeChild(preguntaTxt);
-  mensaje.textContent = msj || "¡Juego terminado!";
+  mensaje.textContent = msj || "¡El Juego Acabo!";
   mensaje.classList.add("mensajeFinal");
   setTimeout(() => {
     preguntaBox.style.display = "none";
-    location.reload();
+    mensaje.classList.remove("mensajeFinal");
+    mensaje.textContent = "";
+    pantallaJuego.classList.remove("activa");
+    pantallaInicio.classList.add("activa");
+    preguntaBox.removeChild(mensaje);
+    preguntaBox.appendChild(preguntaTxt);
+    preguntaBox.appendChild(contenedorOpciones);
+    preguntaBox.appendChild(mensaje);
+    vidas = 3;
+    puntaje = 1;
+    dificultad = 0;
+    progreso = 0;
+    velocidad = 2000;
+    dino.classList.remove("jump"); // Asegura que el dino no esté saltando
+    // location.reload();
   }, 2500);
   localStorage.setItem("mejorPuntaje", Math.max(mejorPuntaje, puntaje));
 }

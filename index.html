@@ -11,12 +11,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Pantalla de carga -->
+    <div id="pantallaCarga">
+      <h2>Cargando...</h2>
+      <div id="barraContenedor">
+        <div id="barraCarga"></div>
+      </div>
+      <p id="porcentaje">0%</p>
+    </div>
+
+    <!-- Pantallas de inicio -->
     <div id="pantallaInicio" class="pantallaInicio pantalla activa">
       <h1>El Viaje del Carnotauro</h1>
       <p>¡Bienvenido! Tu mejor puntaje es: <span id="mejorPuntaje">0</span></p>
+      <img
+        class="main-dino"
+        src="./assets/images/dino.png"
+        alt="cartoon of a dinosaur"
+      />
       <button class="boton" onclick="iniciarJuego()">Jugar</button>
     </div>
 
+    <!-- pantalla de juego -->
     <div id="pantallaJuego" class="pantalla">
       <div class="hud">Vidas: <span id="vidas">3</span></div>
       <div class="puntaje">Nivel: <span id="puntaje"></span></div>
