@@ -36,6 +36,7 @@ function precargarAssets(callback) {
       "assets/images/dino.png",
       "assets/images/background_main.png",
       "assets/images/obstaculo.png",
+      "assets/images/fondo_juego.png",
     ],
   };
 
