@@ -1,0 +1,1102 @@
+[
+  {
+    "id": 1,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál de estos dinosaurios tenía tres cuernos en su cabeza?",
+    "opciones": [
+      "Triceratops",
+      "Velociraptor",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Triceratops"
+  },
+  {
+    "id": 2,
+    "dificultad": "facil",
+    "pregunta": "¿Qué dinosaurio es conocido como el rey de los dinosaurios?",
+    "opciones": [
+      "Brachiosaurus",
+      "Tyrannosaurus Rex",
+      "Ankylosaurus"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 3,
+    "dificultad": "facil",
+    "pregunta": "¿En qué época vivieron la mayoría de los dinosaurios?",
+    "opciones": [
+      "Cretácico",
+      "Jurásico",
+      "Paleolítico"
+    ],
+    "respuesta": "Jurásico"
+  },
+  {
+    "id": 4,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál era el principal alimento del Brachiosaurus?",
+    "opciones": [
+      "Carne",
+      "Plantas",
+      "Huevos"
+    ],
+    "respuesta": "Plantas"
+  },
+  {
+    "id": 5,
+    "dificultad": "facil",
+    "pregunta": "¿Qué tipo de dinosaurio era el Velociraptor?",
+    "opciones": [
+      "Herbívoro",
+      "Omnívoro",
+      "Carnívoro"
+    ],
+    "respuesta": "Carnívoro"
+  },
+  {
+    "id": 6,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio aparece como el principal antagonista en Jurassic Park?",
+    "opciones": [
+      "Velociraptor",
+      "Spinosaurus",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 7,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio tenía una gran cresta ósea en la cabeza y vivía en manadas?",
+    "opciones": [
+      "Pachycephalosaurus",
+      "Parasaurolophus",
+      "Stegosaurus"
+    ],
+    "respuesta": "Parasaurolophus"
+  },
+  {
+    "id": 8,
+    "dificultad": "medio",
+    "pregunta": "¿En qué continente se han encontrado más fósiles de dinosaurios?",
+    "opciones": [
+      "América del Norte",
+      "Asia",
+      "África"
+    ],
+    "respuesta": "América del Norte"
+  },
+  {
+    "id": 9,
+    "dificultad": "medio",
+    "pregunta": "¿Cuál de estos dinosaurios tenía placas óseas en su espalda?",
+    "opciones": [
+      "Stegosaurus",
+      "Allosaurus",
+      "Iguanodon"
+    ],
+    "respuesta": "Stegosaurus"
+  },
+  {
+    "id": 10,
+    "dificultad": "medio",
+    "pregunta": "¿Cómo se llama el dinosaurio protagonista en la película de Disney 'Dinosaurio'?",
+    "opciones": [
+      "Aladar",
+      "Spike",
+      "Littlefoot"
+    ],
+    "respuesta": "Aladar"
+  },
+  {
+    "id": 11,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué evento causó la extinción masiva de los dinosaurios?",
+    "opciones": [
+      "Erupción volcánica",
+      "Impacto de un asteroide",
+      "Cambio climático"
+    ],
+    "respuesta": "Impacto de un asteroide"
+  },
+  {
+    "id": 12,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué especie fue descubierta en Mongolia en 1924 y tenía garras en forma de hoz?",
+    "opciones": [
+      "Deinonychus",
+      "Velociraptor",
+      "Therizinosaurus"
+    ],
+    "respuesta": "Velociraptor"
+  },
+  {
+    "id": 13,
+    "dificultad": "dificil",
+    "pregunta": "¿Cuál es el nombre del período anterior al Jurásico?",
+    "opciones": [
+      "Cretácico",
+      "Triásico",
+      "Devónico"
+    ],
+    "respuesta": "Triásico"
+  },
+  {
+    "id": 14,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué dinosaurio tenía más de 500 dientes conocidos?",
+    "opciones": [
+      "Hadrosaurus",
+      "Nigersaurus",
+      "Carcharodontosaurus"
+    ],
+    "respuesta": "Nigersaurus"
+  },
+  {
+    "id": 15,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué paleontólogo inspiró al personaje Alan Grant en Jurassic Park?",
+    "opciones": [
+      "Robert Bakker",
+      "Paul Sereno",
+      "Jack Horner"
+    ],
+    "respuesta": "Jack Horner"
+  },
+  {
+    "id": 16,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál de estos dinosaurios tenía tres cuernos en su cabeza?",
+    "opciones": [
+      "Triceratops",
+      "Velociraptor",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Triceratops"
+  },
+  {
+    "id": 17,
+    "dificultad": "facil",
+    "pregunta": "¿Qué dinosaurio es conocido como el rey de los dinosaurios?",
+    "opciones": [
+      "Brachiosaurus",
+      "Tyrannosaurus Rex",
+      "Ankylosaurus"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 18,
+    "dificultad": "facil",
+    "pregunta": "¿En qué época vivieron la mayoría de los dinosaurios?",
+    "opciones": [
+      "Cretácico",
+      "Jurásico",
+      "Paleolítico"
+    ],
+    "respuesta": "Jurásico"
+  },
+  {
+    "id": 19,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál era el principal alimento del Brachiosaurus?",
+    "opciones": [
+      "Carne",
+      "Plantas",
+      "Huevos"
+    ],
+    "respuesta": "Plantas"
+  },
+  {
+    "id": 20,
+    "dificultad": "facil",
+    "pregunta": "¿Qué tipo de dinosaurio era el Velociraptor?",
+    "opciones": [
+      "Herbívoro",
+      "Omnívoro",
+      "Carnívoro"
+    ],
+    "respuesta": "Carnívoro"
+  },
+  {
+    "id": 21,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio aparece como el principal antagonista en Jurassic Park?",
+    "opciones": [
+      "Velociraptor",
+      "Spinosaurus",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 22,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio tenía una gran cresta ósea en la cabeza y vivía en manadas?",
+    "opciones": [
+      "Pachycephalosaurus",
+      "Parasaurolophus",
+      "Stegosaurus"
+    ],
+    "respuesta": "Parasaurolophus"
+  },
+  {
+    "id": 23,
+    "dificultad": "medio",
+    "pregunta": "¿En qué continente se han encontrado más fósiles de dinosaurios?",
+    "opciones": [
+      "América del Norte",
+      "Asia",
+      "África"
+    ],
+    "respuesta": "América del Norte"
+  },
+  {
+    "id": 24,
+    "dificultad": "medio",
+    "pregunta": "¿Cuál de estos dinosaurios tenía placas óseas en su espalda?",
+    "opciones": [
+      "Stegosaurus",
+      "Allosaurus",
+      "Iguanodon"
+    ],
+    "respuesta": "Stegosaurus"
+  },
+  {
+    "id": 25,
+    "dificultad": "medio",
+    "pregunta": "¿Cómo se llama el dinosaurio protagonista en la película de Disney 'Dinosaurio'?",
+    "opciones": [
+      "Aladar",
+      "Spike",
+      "Littlefoot"
+    ],
+    "respuesta": "Aladar"
+  },
+  {
+    "id": 26,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué evento causó la extinción masiva de los dinosaurios?",
+    "opciones": [
+      "Erupción volcánica",
+      "Impacto de un asteroide",
+      "Cambio climático"
+    ],
+    "respuesta": "Impacto de un asteroide"
+  },
+  {
+    "id": 27,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué especie fue descubierta en Mongolia en 1924 y tenía garras en forma de hoz?",
+    "opciones": [
+      "Deinonychus",
+      "Velociraptor",
+      "Therizinosaurus"
+    ],
+    "respuesta": "Velociraptor"
+  },
+  {
+    "id": 28,
+    "dificultad": "dificil",
+    "pregunta": "¿Cuál es el nombre del período anterior al Jurásico?",
+    "opciones": [
+      "Cretácico",
+      "Triásico",
+      "Devónico"
+    ],
+    "respuesta": "Triásico"
+  },
+  {
+    "id": 29,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué dinosaurio tenía más de 500 dientes conocidos?",
+    "opciones": [
+      "Hadrosaurus",
+      "Nigersaurus",
+      "Carcharodontosaurus"
+    ],
+    "respuesta": "Nigersaurus"
+  },
+  {
+    "id": 30,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué paleontólogo inspiró al personaje Alan Grant en Jurassic Park?",
+    "opciones": [
+      "Robert Bakker",
+      "Paul Sereno",
+      "Jack Horner"
+    ],
+    "respuesta": "Jack Horner"
+  },
+  {
+    "id": 31,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál de estos dinosaurios tenía tres cuernos en su cabeza?",
+    "opciones": [
+      "Triceratops",
+      "Velociraptor",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Triceratops"
+  },
+  {
+    "id": 32,
+    "dificultad": "facil",
+    "pregunta": "¿Qué dinosaurio es conocido como el rey de los dinosaurios?",
+    "opciones": [
+      "Brachiosaurus",
+      "Tyrannosaurus Rex",
+      "Ankylosaurus"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 33,
+    "dificultad": "facil",
+    "pregunta": "¿En qué época vivieron la mayoría de los dinosaurios?",
+    "opciones": [
+      "Cretácico",
+      "Jurásico",
+      "Paleolítico"
+    ],
+    "respuesta": "Jurásico"
+  },
+  {
+    "id": 34,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál era el principal alimento del Brachiosaurus?",
+    "opciones": [
+      "Carne",
+      "Plantas",
+      "Huevos"
+    ],
+    "respuesta": "Plantas"
+  },
+  {
+    "id": 35,
+    "dificultad": "facil",
+    "pregunta": "¿Qué tipo de dinosaurio era el Velociraptor?",
+    "opciones": [
+      "Herbívoro",
+      "Omnívoro",
+      "Carnívoro"
+    ],
+    "respuesta": "Carnívoro"
+  },
+  {
+    "id": 36,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio aparece como el principal antagonista en Jurassic Park?",
+    "opciones": [
+      "Velociraptor",
+      "Spinosaurus",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 37,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio tenía una gran cresta ósea en la cabeza y vivía en manadas?",
+    "opciones": [
+      "Pachycephalosaurus",
+      "Parasaurolophus",
+      "Stegosaurus"
+    ],
+    "respuesta": "Parasaurolophus"
+  },
+  {
+    "id": 38,
+    "dificultad": "medio",
+    "pregunta": "¿En qué continente se han encontrado más fósiles de dinosaurios?",
+    "opciones": [
+      "América del Norte",
+      "Asia",
+      "África"
+    ],
+    "respuesta": "América del Norte"
+  },
+  {
+    "id": 39,
+    "dificultad": "medio",
+    "pregunta": "¿Cuál de estos dinosaurios tenía placas óseas en su espalda?",
+    "opciones": [
+      "Stegosaurus",
+      "Allosaurus",
+      "Iguanodon"
+    ],
+    "respuesta": "Stegosaurus"
+  },
+  {
+    "id": 40,
+    "dificultad": "medio",
+    "pregunta": "¿Cómo se llama el dinosaurio protagonista en la película de Disney 'Dinosaurio'?",
+    "opciones": [
+      "Aladar",
+      "Spike",
+      "Littlefoot"
+    ],
+    "respuesta": "Aladar"
+  },
+  {
+    "id": 41,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué evento causó la extinción masiva de los dinosaurios?",
+    "opciones": [
+      "Erupción volcánica",
+      "Impacto de un asteroide",
+      "Cambio climático"
+    ],
+    "respuesta": "Impacto de un asteroide"
+  },
+  {
+    "id": 42,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué especie fue descubierta en Mongolia en 1924 y tenía garras en forma de hoz?",
+    "opciones": [
+      "Deinonychus",
+      "Velociraptor",
+      "Therizinosaurus"
+    ],
+    "respuesta": "Velociraptor"
+  },
+  {
+    "id": 43,
+    "dificultad": "dificil",
+    "pregunta": "¿Cuál es el nombre del período anterior al Jurásico?",
+    "opciones": [
+      "Cretácico",
+      "Triásico",
+      "Devónico"
+    ],
+    "respuesta": "Triásico"
+  },
+  {
+    "id": 44,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué dinosaurio tenía más de 500 dientes conocidos?",
+    "opciones": [
+      "Hadrosaurus",
+      "Nigersaurus",
+      "Carcharodontosaurus"
+    ],
+    "respuesta": "Nigersaurus"
+  },
+  {
+    "id": 45,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué paleontólogo inspiró al personaje Alan Grant en Jurassic Park?",
+    "opciones": [
+      "Robert Bakker",
+      "Paul Sereno",
+      "Jack Horner"
+    ],
+    "respuesta": "Jack Horner"
+  },
+  {
+    "id": 46,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál de estos dinosaurios tenía tres cuernos en su cabeza?",
+    "opciones": [
+      "Triceratops",
+      "Velociraptor",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Triceratops"
+  },
+  {
+    "id": 47,
+    "dificultad": "facil",
+    "pregunta": "¿Qué dinosaurio es conocido como el rey de los dinosaurios?",
+    "opciones": [
+      "Brachiosaurus",
+      "Tyrannosaurus Rex",
+      "Ankylosaurus"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 48,
+    "dificultad": "facil",
+    "pregunta": "¿En qué época vivieron la mayoría de los dinosaurios?",
+    "opciones": [
+      "Cretácico",
+      "Jurásico",
+      "Paleolítico"
+    ],
+    "respuesta": "Jurásico"
+  },
+  {
+    "id": 49,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál era el principal alimento del Brachiosaurus?",
+    "opciones": [
+      "Carne",
+      "Plantas",
+      "Huevos"
+    ],
+    "respuesta": "Plantas"
+  },
+  {
+    "id": 50,
+    "dificultad": "facil",
+    "pregunta": "¿Qué tipo de dinosaurio era el Velociraptor?",
+    "opciones": [
+      "Herbívoro",
+      "Omnívoro",
+      "Carnívoro"
+    ],
+    "respuesta": "Carnívoro"
+  },
+  {
+    "id": 51,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio aparece como el principal antagonista en Jurassic Park?",
+    "opciones": [
+      "Velociraptor",
+      "Spinosaurus",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 52,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio tenía una gran cresta ósea en la cabeza y vivía en manadas?",
+    "opciones": [
+      "Pachycephalosaurus",
+      "Parasaurolophus",
+      "Stegosaurus"
+    ],
+    "respuesta": "Parasaurolophus"
+  },
+  {
+    "id": 53,
+    "dificultad": "medio",
+    "pregunta": "¿En qué continente se han encontrado más fósiles de dinosaurios?",
+    "opciones": [
+      "América del Norte",
+      "Asia",
+      "África"
+    ],
+    "respuesta": "América del Norte"
+  },
+  {
+    "id": 54,
+    "dificultad": "medio",
+    "pregunta": "¿Cuál de estos dinosaurios tenía placas óseas en su espalda?",
+    "opciones": [
+      "Stegosaurus",
+      "Allosaurus",
+      "Iguanodon"
+    ],
+    "respuesta": "Stegosaurus"
+  },
+  {
+    "id": 55,
+    "dificultad": "medio",
+    "pregunta": "¿Cómo se llama el dinosaurio protagonista en la película de Disney 'Dinosaurio'?",
+    "opciones": [
+      "Aladar",
+      "Spike",
+      "Littlefoot"
+    ],
+    "respuesta": "Aladar"
+  },
+  {
+    "id": 56,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué evento causó la extinción masiva de los dinosaurios?",
+    "opciones": [
+      "Erupción volcánica",
+      "Impacto de un asteroide",
+      "Cambio climático"
+    ],
+    "respuesta": "Impacto de un asteroide"
+  },
+  {
+    "id": 57,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué especie fue descubierta en Mongolia en 1924 y tenía garras en forma de hoz?",
+    "opciones": [
+      "Deinonychus",
+      "Velociraptor",
+      "Therizinosaurus"
+    ],
+    "respuesta": "Velociraptor"
+  },
+  {
+    "id": 58,
+    "dificultad": "dificil",
+    "pregunta": "¿Cuál es el nombre del período anterior al Jurásico?",
+    "opciones": [
+      "Cretácico",
+      "Triásico",
+      "Devónico"
+    ],
+    "respuesta": "Triásico"
+  },
+  {
+    "id": 59,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué dinosaurio tenía más de 500 dientes conocidos?",
+    "opciones": [
+      "Hadrosaurus",
+      "Nigersaurus",
+      "Carcharodontosaurus"
+    ],
+    "respuesta": "Nigersaurus"
+  },
+  {
+    "id": 60,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué paleontólogo inspiró al personaje Alan Grant en Jurassic Park?",
+    "opciones": [
+      "Robert Bakker",
+      "Paul Sereno",
+      "Jack Horner"
+    ],
+    "respuesta": "Jack Horner"
+  },
+  {
+    "id": 61,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál de estos dinosaurios tenía tres cuernos en su cabeza?",
+    "opciones": [
+      "Triceratops",
+      "Velociraptor",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Triceratops"
+  },
+  {
+    "id": 62,
+    "dificultad": "facil",
+    "pregunta": "¿Qué dinosaurio es conocido como el rey de los dinosaurios?",
+    "opciones": [
+      "Brachiosaurus",
+      "Tyrannosaurus Rex",
+      "Ankylosaurus"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 63,
+    "dificultad": "facil",
+    "pregunta": "¿En qué época vivieron la mayoría de los dinosaurios?",
+    "opciones": [
+      "Cretácico",
+      "Jurásico",
+      "Paleolítico"
+    ],
+    "respuesta": "Jurásico"
+  },
+  {
+    "id": 64,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál era el principal alimento del Brachiosaurus?",
+    "opciones": [
+      "Carne",
+      "Plantas",
+      "Huevos"
+    ],
+    "respuesta": "Plantas"
+  },
+  {
+    "id": 65,
+    "dificultad": "facil",
+    "pregunta": "¿Qué tipo de dinosaurio era el Velociraptor?",
+    "opciones": [
+      "Herbívoro",
+      "Omnívoro",
+      "Carnívoro"
+    ],
+    "respuesta": "Carnívoro"
+  },
+  {
+    "id": 66,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio aparece como el principal antagonista en Jurassic Park?",
+    "opciones": [
+      "Velociraptor",
+      "Spinosaurus",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 67,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio tenía una gran cresta ósea en la cabeza y vivía en manadas?",
+    "opciones": [
+      "Pachycephalosaurus",
+      "Parasaurolophus",
+      "Stegosaurus"
+    ],
+    "respuesta": "Parasaurolophus"
+  },
+  {
+    "id": 68,
+    "dificultad": "medio",
+    "pregunta": "¿En qué continente se han encontrado más fósiles de dinosaurios?",
+    "opciones": [
+      "América del Norte",
+      "Asia",
+      "África"
+    ],
+    "respuesta": "América del Norte"
+  },
+  {
+    "id": 69,
+    "dificultad": "medio",
+    "pregunta": "¿Cuál de estos dinosaurios tenía placas óseas en su espalda?",
+    "opciones": [
+      "Stegosaurus",
+      "Allosaurus",
+      "Iguanodon"
+    ],
+    "respuesta": "Stegosaurus"
+  },
+  {
+    "id": 70,
+    "dificultad": "medio",
+    "pregunta": "¿Cómo se llama el dinosaurio protagonista en la película de Disney 'Dinosaurio'?",
+    "opciones": [
+      "Aladar",
+      "Spike",
+      "Littlefoot"
+    ],
+    "respuesta": "Aladar"
+  },
+  {
+    "id": 71,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué evento causó la extinción masiva de los dinosaurios?",
+    "opciones": [
+      "Erupción volcánica",
+      "Impacto de un asteroide",
+      "Cambio climático"
+    ],
+    "respuesta": "Impacto de un asteroide"
+  },
+  {
+    "id": 72,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué especie fue descubierta en Mongolia en 1924 y tenía garras en forma de hoz?",
+    "opciones": [
+      "Deinonychus",
+      "Velociraptor",
+      "Therizinosaurus"
+    ],
+    "respuesta": "Velociraptor"
+  },
+  {
+    "id": 73,
+    "dificultad": "dificil",
+    "pregunta": "¿Cuál es el nombre del período anterior al Jurásico?",
+    "opciones": [
+      "Cretácico",
+      "Triásico",
+      "Devónico"
+    ],
+    "respuesta": "Triásico"
+  },
+  {
+    "id": 74,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué dinosaurio tenía más de 500 dientes conocidos?",
+    "opciones": [
+      "Hadrosaurus",
+      "Nigersaurus",
+      "Carcharodontosaurus"
+    ],
+    "respuesta": "Nigersaurus"
+  },
+  {
+    "id": 75,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué paleontólogo inspiró al personaje Alan Grant en Jurassic Park?",
+    "opciones": [
+      "Robert Bakker",
+      "Paul Sereno",
+      "Jack Horner"
+    ],
+    "respuesta": "Jack Horner"
+  },
+  {
+    "id": 76,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál de estos dinosaurios tenía tres cuernos en su cabeza?",
+    "opciones": [
+      "Triceratops",
+      "Velociraptor",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Triceratops"
+  },
+  {
+    "id": 77,
+    "dificultad": "facil",
+    "pregunta": "¿Qué dinosaurio es conocido como el rey de los dinosaurios?",
+    "opciones": [
+      "Brachiosaurus",
+      "Tyrannosaurus Rex",
+      "Ankylosaurus"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 78,
+    "dificultad": "facil",
+    "pregunta": "¿En qué época vivieron la mayoría de los dinosaurios?",
+    "opciones": [
+      "Cretácico",
+      "Jurásico",
+      "Paleolítico"
+    ],
+    "respuesta": "Jurásico"
+  },
+  {
+    "id": 79,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál era el principal alimento del Brachiosaurus?",
+    "opciones": [
+      "Carne",
+      "Plantas",
+      "Huevos"
+    ],
+    "respuesta": "Plantas"
+  },
+  {
+    "id": 80,
+    "dificultad": "facil",
+    "pregunta": "¿Qué tipo de dinosaurio era el Velociraptor?",
+    "opciones": [
+      "Herbívoro",
+      "Omnívoro",
+      "Carnívoro"
+    ],
+    "respuesta": "Carnívoro"
+  },
+  {
+    "id": 81,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio aparece como el principal antagonista en Jurassic Park?",
+    "opciones": [
+      "Velociraptor",
+      "Spinosaurus",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 82,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio tenía una gran cresta ósea en la cabeza y vivía en manadas?",
+    "opciones": [
+      "Pachycephalosaurus",
+      "Parasaurolophus",
+      "Stegosaurus"
+    ],
+    "respuesta": "Parasaurolophus"
+  },
+  {
+    "id": 83,
+    "dificultad": "medio",
+    "pregunta": "¿En qué continente se han encontrado más fósiles de dinosaurios?",
+    "opciones": [
+      "América del Norte",
+      "Asia",
+      "África"
+    ],
+    "respuesta": "América del Norte"
+  },
+  {
+    "id": 84,
+    "dificultad": "medio",
+    "pregunta": "¿Cuál de estos dinosaurios tenía placas óseas en su espalda?",
+    "opciones": [
+      "Stegosaurus",
+      "Allosaurus",
+      "Iguanodon"
+    ],
+    "respuesta": "Stegosaurus"
+  },
+  {
+    "id": 85,
+    "dificultad": "medio",
+    "pregunta": "¿Cómo se llama el dinosaurio protagonista en la película de Disney 'Dinosaurio'?",
+    "opciones": [
+      "Aladar",
+      "Spike",
+      "Littlefoot"
+    ],
+    "respuesta": "Aladar"
+  },
+  {
+    "id": 86,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué evento causó la extinción masiva de los dinosaurios?",
+    "opciones": [
+      "Erupción volcánica",
+      "Impacto de un asteroide",
+      "Cambio climático"
+    ],
+    "respuesta": "Impacto de un asteroide"
+  },
+  {
+    "id": 87,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué especie fue descubierta en Mongolia en 1924 y tenía garras en forma de hoz?",
+    "opciones": [
+      "Deinonychus",
+      "Velociraptor",
+      "Therizinosaurus"
+    ],
+    "respuesta": "Velociraptor"
+  },
+  {
+    "id": 88,
+    "dificultad": "dificil",
+    "pregunta": "¿Cuál es el nombre del período anterior al Jurásico?",
+    "opciones": [
+      "Cretácico",
+      "Triásico",
+      "Devónico"
+    ],
+    "respuesta": "Triásico"
+  },
+  {
+    "id": 89,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué dinosaurio tenía más de 500 dientes conocidos?",
+    "opciones": [
+      "Hadrosaurus",
+      "Nigersaurus",
+      "Carcharodontosaurus"
+    ],
+    "respuesta": "Nigersaurus"
+  },
+  {
+    "id": 90,
+    "dificultad": "dificil",
+    "pregunta": "¿Qué paleontólogo inspiró al personaje Alan Grant en Jurassic Park?",
+    "opciones": [
+      "Robert Bakker",
+      "Paul Sereno",
+      "Jack Horner"
+    ],
+    "respuesta": "Jack Horner"
+  },
+  {
+    "id": 91,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál de estos dinosaurios tenía tres cuernos en su cabeza?",
+    "opciones": [
+      "Triceratops",
+      "Velociraptor",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Triceratops"
+  },
+  {
+    "id": 92,
+    "dificultad": "facil",
+    "pregunta": "¿Qué dinosaurio es conocido como el rey de los dinosaurios?",
+    "opciones": [
+      "Brachiosaurus",
+      "Tyrannosaurus Rex",
+      "Ankylosaurus"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 93,
+    "dificultad": "facil",
+    "pregunta": "¿En qué época vivieron la mayoría de los dinosaurios?",
+    "opciones": [
+      "Cretácico",
+      "Jurásico",
+      "Paleolítico"
+    ],
+    "respuesta": "Jurásico"
+  },
+  {
+    "id": 94,
+    "dificultad": "facil",
+    "pregunta": "¿Cuál era el principal alimento del Brachiosaurus?",
+    "opciones": [
+      "Carne",
+      "Plantas",
+      "Huevos"
+    ],
+    "respuesta": "Plantas"
+  },
+  {
+    "id": 95,
+    "dificultad": "facil",
+    "pregunta": "¿Qué tipo de dinosaurio era el Velociraptor?",
+    "opciones": [
+      "Herbívoro",
+      "Omnívoro",
+      "Carnívoro"
+    ],
+    "respuesta": "Carnívoro"
+  },
+  {
+    "id": 96,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio aparece como el principal antagonista en Jurassic Park?",
+    "opciones": [
+      "Velociraptor",
+      "Spinosaurus",
+      "Tyrannosaurus Rex"
+    ],
+    "respuesta": "Tyrannosaurus Rex"
+  },
+  {
+    "id": 97,
+    "dificultad": "medio",
+    "pregunta": "¿Qué dinosaurio tenía una gran cresta ósea en la cabeza y vivía en manadas?",
+    "opciones": [
+      "Pachycephalosaurus",
+      "Parasaurolophus",
+      "Stegosaurus"
+    ],
+    "respuesta": "Parasaurolophus"
+  },
+  {
+    "id": 98,
+    "dificultad": "medio",
+    "pregunta": "¿En qué continente se han encontrado más fósiles de dinosaurios?",
+    "opciones": [
+      "América del Norte",
+      "Asia",
+      "África"
+    ],
+    "respuesta": "América del Norte"
+  },
+  {
+    "id": 99,
+    "dificultad": "medio",
+    "pregunta": "¿Cuál de estos dinosaurios tenía placas óseas en su espalda?",
+    "opciones": [
+      "Stegosaurus",
+      "Allosaurus",
+      "Iguanodon"
+    ],
+    "respuesta": "Stegosaurus"
+  },
+  {
+    "id": 100,
+    "dificultad": "medio",
+    "pregunta": "¿Cómo se llama el dinosaurio protagonista en la película de Disney 'Dinosaurio'?",
+    "opciones": [
+      "Aladar",
+      "Spike",
+      "Littlefoot"
+    ],
+    "respuesta": "Aladar"
+  }
+]

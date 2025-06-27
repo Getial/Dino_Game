@@ -3,7 +3,7 @@ const sonidoSalto = new Audio("./assets/sounds/jump.mp3");
 const sonidoSelva = new Audio("./assets/sounds/selva3.mp3");
 let dificultad = 0; // 0 = facil, 1 = medio, 2 = dificil
 let preguntas = [];
-let preguntasPorNivel = {};
+let preguntasPorDificultad = {};
 let preguntasUsadas = JSON.parse(localStorage.getItem("preguntasUsadas")) || [];
 let vidas = 3;
 let progreso = 0;
@@ -82,6 +82,26 @@ precargarAssets(() => {
 
 document.getElementById("mejorPuntaje").textContent = mejorPuntaje;
 
+//add event listeners
+// Pausar cuando se pierde visibilidad (cambia de pestaña o app)
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    sonidoSelva.pause();
+  } else {
+    sonidoSelva.play();
+  }
+});
+
+// También en móviles, cuando el usuario cierra o minimiza
+window.addEventListener("pagehide", () => {
+  sonidoSelva.pause();
+});
+window.addEventListener("pageshow", () => {
+  if (!document.hidden) {
+    sonidoSelva.play();
+  }
+});
+
 toggleBtn.addEventListener("click", () => {
   sonidoActivado = !sonidoActivado;
   if (sonidoActivado) {
@@ -98,24 +118,24 @@ pantallaJuego.addEventListener("click", saltar);
 sonidoSelva.loop = true;
 sonidoSalto.volume = 0.5; // Ajusta el volumen del sonido de salto
 
-fetch("preguntas.json")
+fetch("preguntas_dinosaurios_100.json")
   .then((res) => res.json())
   .then((data) => {
-    preguntasPorNivel = agruparPreguntas(data);
+    preguntasPorDificultad = agruparPreguntas(data);
   })
   .catch((err) => console.error("Error al cargar preguntas:", err));
 
 function agruparPreguntas(preguntas) {
   return {
-    facil: preguntas.filter((p) => p.nivel === "facil"),
-    medio: preguntas.filter((p) => p.nivel === "medio"),
-    dificil: preguntas.filter((p) => p.nivel === "dificil"),
+    facil: preguntas.filter((p) => p.dificultad === "facil"),
+    medio: preguntas.filter((p) => p.dificultad === "medio"),
+    dificil: preguntas.filter((p) => p.dificultad === "dificil"),
   };
 }
 
-function obtenerPregunta(preguntasPorNivel) {
+function obtenerPregunta(preguntasPorDificultad) {
   const nivel = dificultades[dificultad];
-  const disponibles = preguntasPorNivel[nivel].filter(
+  const disponibles = preguntasPorDificultad[nivel].filter(
     (p) => !preguntasUsadas.includes(p.id)
   );
 
@@ -123,7 +143,7 @@ function obtenerPregunta(preguntasPorNivel) {
   if (disponibles.length === 0) {
     preguntasUsadas = [];
     localStorage.removeItem("preguntasUsadas");
-    return obtenerPregunta(preguntasPorNivel); // vuelve a intentar
+    return obtenerPregunta(preguntasPorDificultad); // vuelve a intentar
   }
 
   // Seleccionar una pregunta aleatoria
@@ -180,7 +200,7 @@ function mostrarPregunta() {
   sonidoSelva.volume = 0.2; // Reduce el volumen de la música al mostrar la pregunta
   preguntaActiva = true;
   preguntaBox.style.display = "flex";
-  const pregunta = obtenerPregunta(preguntasPorNivel);
+  const pregunta = obtenerPregunta(preguntasPorDificultad);
   preguntaTxt.textContent = pregunta.pregunta;
   contenedorOpciones.innerHTML = "";
   pregunta.opciones.forEach((op) => {
