@@ -16,6 +16,7 @@ let colisionDetectada = false;
 let esperandoPregunta = false;
 let preguntaActiva = false;
 let sonidoActivado = true;
+let clickCount = 0;
 
 // Elementos del DOM
 const dino = document.getElementById("dino");
@@ -27,6 +28,9 @@ const preguntaTxt = document.getElementById("pregunta");
 const contenedorOpciones = document.querySelector(".opciones");
 const mensaje = document.getElementById("mensajeRespuesta");
 const toggleBtn = document.getElementById("toggleSonido");
+const easterEgg = document.getElementById("easterEgg");
+const mainDino = document.getElementById("mainDino");
+const closeEasterEgg = document.getElementById("closeEasterEgg");
 
 //precargar assets
 function precargarAssets(callback) {
@@ -37,6 +41,7 @@ function precargarAssets(callback) {
       "assets/images/background_main.png",
       "assets/images/obstaculo.png",
       "assets/images/fondo_juego.png",
+      "assets/images/dino_regalo.png",
     ],
   };
 
@@ -87,7 +92,7 @@ document.getElementById("mejorPuntaje").textContent = mejorPuntaje;
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
     sonidoSelva.pause();
-  } else {
+  } else if (sonidoActivado) {
     sonidoSelva.play();
   }
 });
@@ -113,7 +118,19 @@ toggleBtn.addEventListener("click", () => {
   }
 });
 
+closeEasterEgg.addEventListener("click", () => {
+  clickCount = 0; // Reinicia el contador de clicks
+  easterEgg.style.display = "none";
+});
+
 pantallaJuego.addEventListener("click", saltar);
+
+mainDino.addEventListener("click", () => {
+  clickCount++;
+  if (clickCount === 20) {
+    easterEgg.style.display = "block";
+  }
+});
 
 sonidoSelva.loop = true;
 sonidoSalto.volume = 0.5; // Ajusta el volumen del sonido de salto

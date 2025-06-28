@@ -216,6 +216,7 @@ html {
   background-size: contain;
   cursor: pointer;
   border: none;
+  z-index: 100;
 }
 #toggleSonido.off {
   background: url("./assets/icons/sound-off.png") no-repeat center center;
@@ -224,4 +225,72 @@ html {
 #toggleSonido:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease;
+}
+
+#easterEgg {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-50%);
+  background: url("./assets/images/background_main.png") repeat-x bottom;
+  background-size: cover;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  display: none;
+  z-index: 10;
+  animation: aparecer 1s ease;
+}
+
+.dedicatoria {
+  position: relative;
+  top: 23%;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#easterEgg img {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 300px;
+  height: auto;
+}
+
+#easterEgg img#closeEasterEgg {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  right: 20px;
+  top: 10px;
+  left: 20px;
+}
+
+#easterEgg span {
+  position: absolute;
+  bottom: 60px;
+  left: 15px;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  font-size: 20px;
+  color: #264653;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
