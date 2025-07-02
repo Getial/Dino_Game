@@ -350,10 +350,6 @@ function iniciarColisiones() {
       dinoRect.left > obstaculoRect.right
     );
 
-    console.log("Dino:", dinoRect);
-    console.log("Obstáculo:", obstaculoRect);
-    console.log("Colisión:", colision);
-
     if (colision && !colisionDetectada) {
       colisionDetectada = true; // Evita colisiones múltiples
       perderVida();

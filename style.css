@@ -265,6 +265,21 @@ html {
   font-weight: bold;
   color: #c33317;
 }
+.juego-pausado {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  color: #264653;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 #toggleSonido {
   position: absolute;
   top: 10px;
