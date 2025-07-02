@@ -40,12 +40,20 @@
       <div class="barra-progreso">
         <div class="progreso" id="barraProgreso"></div>
       </div>
-      <img src="./assets/images/dino.png" class="dino" id="dino" />
-      <img
-        src="./assets/images/obstaculo.png"
-        class="obstaculo"
-        id="obstaculo"
-      />
+      <button id="btnPausar" class="btn-pause" onclick="pausarJuego()">
+        Pausar
+      </button>
+
+      <div id="dino">
+        <img src="./assets/images/dino.png" />
+        <div id="hitboxDino" class="hitbox hitbox-dino"></div>
+      </div>
+
+      <div id="obstaculo">
+        <img src="./assets/images/obstaculo.png" />
+        <div id="hitboxObstaculo" class="hitbox hitbox-obstaculo"></div>
+      </div>
+      <div id="zonaJuego"></div>
 
       <div id="preguntaBox">
         <div id="pregunta"></div>

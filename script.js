@@ -7,11 +7,13 @@ let preguntasPorDificultad = {};
 let preguntasUsadas = JSON.parse(localStorage.getItem("preguntasUsadas")) || [];
 let vidas = 3;
 let progreso = 0;
-let velocidad = 2000;
-let distanciaPista = 5000;
+let velocidad = 2700;
+let distanciaPista = 7000;
 let puntaje = 1;
 let mejorPuntaje = localStorage.getItem("mejorPuntaje") || 0;
 let colisionInterval;
+let progresoInterval;
+// Variables de estado del juego
 let colisionDetectada = false;
 let esperandoPregunta = false;
 let preguntaActiva = false;
@@ -21,8 +23,11 @@ let clickCount = 0;
 // Elementos del DOM
 const dino = document.getElementById("dino");
 const obstaculo = document.getElementById("obstaculo");
-const pantallaJuego = document.getElementById("pantallaJuego");
+const hitboxDino = document.getElementById("hitboxDino");
+const hitboxObstaculo = document.getElementById("hitboxObstaculo");
 const pantallaInicio = document.getElementById("pantallaInicio");
+const pantallaJuego = document.getElementById("pantallaJuego");
+const zonaJuego = document.getElementById("zonaJuego");
 const preguntaBox = document.getElementById("preguntaBox");
 const preguntaTxt = document.getElementById("pregunta");
 const contenedorOpciones = document.querySelector(".opciones");
@@ -102,7 +107,7 @@ window.addEventListener("pagehide", () => {
   sonidoSelva.pause();
 });
 window.addEventListener("pageshow", () => {
-  if (!document.hidden) {
+  if (!document.hidden && sonidoActivado) {
     sonidoSelva.play();
   }
 });
@@ -123,7 +128,7 @@ closeEasterEgg.addEventListener("click", () => {
   easterEgg.style.display = "none";
 });
 
-pantallaJuego.addEventListener("click", saltar);
+zonaJuego.addEventListener("click", saltar);
 
 mainDino.addEventListener("click", () => {
   clickCount++;
@@ -172,23 +177,29 @@ function obtenerPregunta(preguntasPorDificultad) {
 }
 
 function iniciarJuego() {
-  sonidoSelva.play();
+  sonidoActivado && sonidoSelva.play();
   pantallaInicio.classList.remove("activa");
   pantallaJuego.classList.add("activa");
   document.getElementById("vidas").textContent = vidas;
   document.getElementById("puntaje").textContent = puntaje;
+  progreso = 0;
   iniciarNivel();
 }
 
 function iniciarNivel() {
   sonidoSelva.volume = 0.5; // Ajusta el volumen de la música
-  progreso = 0;
+  // obstaculo.style.right = "0";
+  // progreso = 0;
   esperandoPregunta = false;
   actualizarProgreso();
   moverObstaculo();
   iniciarColisiones();
 
-  let progresoInterval = setInterval(() => {
+  if (progresoInterval) {
+    clearInterval(progresoInterval); // Limpia cualquier progreso previo
+  }
+
+  progresoInterval = setInterval(() => {
     progreso += 1;
     actualizarProgreso();
     if (progreso >= 100) {
@@ -203,18 +214,24 @@ function actualizarProgreso() {
 }
 
 function moverObstaculo() {
+  // obstaculo.style.right = obstaculoRight + "px"; // Mantiene la posición actual
   obstaculo.style.animationDuration = velocidad / 1000 + "s";
   obstaculo.style.animationName = "moverObstaculo";
 }
 
 function detenerObstaculo() {
+  const obstaculoRight = parseInt(
+    window.getComputedStyle(obstaculo).getPropertyValue("right")
+  );
   obstaculo.style.animationName = "none";
+  obstaculo.style.right = obstaculoRight + "px"; // Mantiene la posición actual
   obstaculo.offsetHeight; // Fuerza reflow
-  obstaculo.style.right = "0"; // Opcional: restablecer posición
+  // obstaculo.style.right = "0"; // Opcional: restablecer posición
 }
 
 function mostrarPregunta() {
   sonidoSelva.volume = 0.2; // Reduce el volumen de la música al mostrar la pregunta
+  clearInterval(progresoInterval);
   preguntaActiva = true;
   preguntaBox.style.display = "flex";
   const pregunta = obtenerPregunta(preguntasPorDificultad);
@@ -238,8 +255,9 @@ function responder(opcion, respuestaCorrecta) {
     mensaje.style.color = "green";
     // Avanzar al siguiente nivel
     dificultad = (dificultad + 1) % dificultades.length;
-    velocidad *= 0.9;
+    velocidad *= 0.95;
 
+    progreso = 0; // Reinicia el progreso
     finalizarRespuesta(() => iniciarNivel());
   } else {
     mensaje.textContent = "Respuesta incorrecta";
@@ -278,18 +296,63 @@ function saltar() {
   }
 }
 
-function iniciarColisiones() {
-  colisionInterval = setInterval(() => {
-    const dinoBottom = parseInt(
-      window.getComputedStyle(dino).getPropertyValue("bottom")
-    );
-    const obstaculoRight = parseInt(
-      window.getComputedStyle(obstaculo).getPropertyValue("right")
-    );
-    const obstaculoLeft = window.innerWidth - obstaculoRight;
+// function iniciarColisiones() {
+//   if (colisionInterval) {
+//     clearInterval(colisionInterval); // Limpia cualquier colisión previa
+//   }
 
-    const colision =
-      obstaculoLeft < 110 && obstaculoLeft > 60 && dinoBottom < 110;
+//   colisionInterval = setInterval(() => {
+//     const dinoBottom = parseInt(
+//       window.getComputedStyle(dino).getPropertyValue("bottom")
+//     );
+//     const obstaculoRight = parseInt(
+//       window.getComputedStyle(obstaculo).getPropertyValue("right")
+//     );
+//     const obstaculoLeft = window.innerWidth - obstaculoRight;
+
+//     const colision =
+//       obstaculoLeft < 160 && obstaculoLeft > 90 && dinoBottom < 110;
+//     console.log(
+//       `Dino Bottom: ${dinoBottom}, Obstaculo Left: ${obstaculoLeft}, Colision: ${colision}`
+//     );
+
+//     if (colision && !colisionDetectada) {
+//       colisionDetectada = true; // Evita colisiones múltiples
+//       perderVida();
+//     }
+
+//     // Restablece el flag si el obstáculo ya pasó al dino
+//     if (obstaculoLeft <= 40 || obstaculoLeft >= 160) {
+//       colisionDetectada = false;
+//     }
+
+//     if (obstaculoLeft <= 10 && esperandoPregunta) {
+//       detenerObstaculo();
+//       clearInterval(colisionInterval);
+//       mostrarPregunta();
+//     }
+//   }, 50);
+// }
+
+function iniciarColisiones() {
+  if (colisionInterval) {
+    clearInterval(colisionInterval); // Limpia cualquier colisión previa
+  }
+
+  colisionInterval = setInterval(() => {
+    const dinoRect = hitboxDino.getBoundingClientRect();
+    const obstaculoRect = hitboxObstaculo.getBoundingClientRect();
+
+    const colision = !(
+      dinoRect.top > obstaculoRect.bottom ||
+      dinoRect.bottom < obstaculoRect.top ||
+      dinoRect.right < obstaculoRect.left ||
+      dinoRect.left > obstaculoRect.right
+    );
+
+    console.log("Dino:", dinoRect);
+    console.log("Obstáculo:", obstaculoRect);
+    console.log("Colisión:", colision);
 
     if (colision && !colisionDetectada) {
       colisionDetectada = true; // Evita colisiones múltiples
@@ -297,11 +360,15 @@ function iniciarColisiones() {
     }
 
     // Restablece el flag si el obstáculo ya pasó al dino
-    if (obstaculoLeft <= 40 || obstaculoLeft >= 110) {
+    if (
+      (obstaculoRect.right < dinoRect.left ||
+        obstaculoRect.left > dinoRect.right) &&
+      colisionDetectada
+    ) {
       colisionDetectada = false;
     }
 
-    if (obstaculoLeft <= 10 && esperandoPregunta) {
+    if (obstaculoRect.left <= 0 && esperandoPregunta) {
       detenerObstaculo();
       clearInterval(colisionInterval);
       mostrarPregunta();
@@ -316,7 +383,28 @@ function perderVida() {
     terminarJuego("¡Juego terminado!");
   } else {
     // obstaculo.style.animationDuration = velocidad / 1000 + "s"; // Reinicia la velocidad del obstáculo
+    progreso = 0; // Reinicia el progreso
     iniciarNivel(); // Reinicia el nivel actual
+  }
+}
+
+function pausarJuego() {
+  if (!preguntaActiva) {
+    preguntaActiva = true;
+    detenerObstaculo();
+    clearInterval(colisionInterval);
+    clearInterval(progresoInterval);
+    preguntaBox.style.display = "flex";
+    preguntaTxt.classList.add("juego-pausado");
+    preguntaTxt.textContent = "Juego Pausado";
+    sonidoSelva.pause();
+  } else {
+    preguntaBox.style.display = "none";
+    preguntaTxt.classList.remove("juego-pausado");
+    preguntaTxt.textContent = "";
+    preguntaActiva = false;
+    sonidoSelva.play();
+    iniciarNivel();
   }
 }
 
@@ -325,6 +413,7 @@ function ganarJuego() {
 }
 
 function terminarJuego(msj) {
+  localStorage.setItem("mejorPuntaje", Math.max(mejorPuntaje, puntaje));
   detenerObstaculo();
   colisionDetectada = false;
   preguntaActiva = false;
@@ -341,6 +430,8 @@ function terminarJuego(msj) {
     mensaje.textContent = "";
     pantallaJuego.classList.remove("activa");
     pantallaInicio.classList.add("activa");
+    document.getElementById("mejorPuntaje").textContent =
+      localStorage.getItem("mejorPuntaje");
     preguntaBox.removeChild(mensaje);
     preguntaBox.appendChild(preguntaTxt);
     preguntaBox.appendChild(contenedorOpciones);
@@ -353,5 +444,4 @@ function terminarJuego(msj) {
     dino.classList.remove("jump"); // Asegura que el dino no esté saltando
     // location.reload();
   }, 2500);
-  localStorage.setItem("mejorPuntaje", Math.max(mejorPuntaje, puntaje));
 }

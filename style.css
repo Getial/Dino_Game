@@ -100,38 +100,96 @@ html {
   background-size: cover;
   overflow: hidden;
 }
-.dino {
-  /* height: 60px; */
-  width: 60;
+#zonaJuego {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 85%;
+  overflow: hidden;
+  /* background-color: #fef9; */
+}
+.btn-pause {
+  position: absolute;
+  top: 10px;
+  right: 80px;
+  padding: 10px 20px;
+  background-color: #e76f51;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#dino {
+  height: auto;
+  width: 100px;
   position: absolute;
   bottom: 100px;
   left: 50px;
-  width: 100px;
-  /* transition: bottom 0.2s ease; */
 }
-.dino.jump {
-  animation: jump 1s ease;
+#dino img {
+  width: 100%;
+  height: auto;
+}
+
+.hitbox {
+  position: absolute;
+}
+
+.hitbox-dino {
+  /* background-color: rgba(255, 233, 0, 0.7); */
+  top: 15px;
+  left: 25px;
+  width: 50px;
+  height: 60px;
+  border-radius: 20px;
+}
+
+#dino.jump {
+  animation: jump 1700ms ease;
 }
 
 @keyframes jump {
   0% {
     bottom: 100px;
   }
-  50% {
-    bottom: 180px;
+  10% {
+    bottom: 140px;
+  }
+  20% {
+    bottom: 150px;
+  }
+  60% {
+    bottom: 150px;
   }
   100% {
     bottom: 100px;
   }
 }
 
-.obstaculo {
+#obstaculo {
   position: absolute;
-  bottom: 100px;
+  bottom: 110px;
   right: -60px;
   width: 60px;
+  height: 40px;
   animation: moverObstaculo linear infinite;
 }
+#obstaculo img {
+  width: 100%;
+  height: auto;
+}
+
+.hitbox-obstaculo {
+  /* background-color: rgba(0, 0, 255, 0.6); */
+  top: 12px;
+  right: 12px;
+  width: 35px;
+  height: 18px;
+  border-radius: 10px;
+}
+
 @keyframes moverObstaculo {
   from {
     right: -60px;
@@ -181,6 +239,7 @@ html {
 .puntaje {
   left: 100px;
 }
+
 .barra-progreso {
   position: absolute;
   top: 60px;
