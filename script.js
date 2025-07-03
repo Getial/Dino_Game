@@ -130,12 +130,12 @@ closeEasterEgg.addEventListener("click", () => {
 
 zonaJuego.addEventListener("click", saltar);
 
-mainDino.addEventListener("click", () => {
-  clickCount++;
-  if (clickCount === 20) {
-    easterEgg.style.display = "block";
-  }
-});
+// mainDino.addEventListener("click", () => {
+//   clickCount++;
+//   if (clickCount === 20) {
+//     easterEgg.style.display = "block";
+//   }
+// });
 
 sonidoSelva.loop = true;
 sonidoSalto.volume = 0.5; // Ajusta el volumen del sonido de salto
